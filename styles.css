@@ -1,36 +1,100 @@
-body {
-    font-family: 'Roboto', sans-serif;
+/* Reset Styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
 }
 
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
 header {
     background-color: #333;
     color: #fff;
     padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    /* Align items vertically */
+}
+
+.profile-info h1 {
+    margin: 1;
+    text-align: left;
+}
+
+.profile-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-text h1,
+.profile-text h2 {
+    margin: 0;
+    /* Reset default margins */
+    text-align: left;
+    margin-bottom: 5px;
+    /* Add spacing between name and job profile */
+}
+
+/* .profile-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: fill;
+    margin-bottom: 20px;
+} */
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 60%;
+    margin-right: 20px;
+}
+
+nav {
+    clear: both;
+    /* Clear the float to ensure nav appears below the profile */
 }
 
 nav ul {
     list-style-type: none;
-    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
     color: #fff;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
     color: #ffd700;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-    color: #fff;
-    transition: color 0.3s ease;
-}
-
+/* Main Content Section Styles */
 section {
+    padding: 50px 20px;
+    text-align: left;
     padding: 20px;
     background-color: #fff;
     margin: 20px;
@@ -43,9 +107,55 @@ section:hover {
     transform: scale(1.02);
 }
 
+section h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.article-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.article-header {
+    background-color: #ffd700;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.article-header:hover {
+    transform: translateY(-5px);
+}
+
+.article-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.article-content p {
+    margin-bottom: 20px;
+}
+
+/* Footer Styles */
 footer {
     background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
+}
+
+footer p {
+    font-size: 1em;
 }
