@@ -88,30 +88,56 @@
         <!-- Add more skills here -->
     </section>
 
-    <section id="employment">
+    <section id="Employment">
         <h2>Employment</h2>
         <article class="Employment">
-            <h3>Lead Analyst - Byjus - Think & Learn Pvt Ltd</h3>
-            <p>Full-time | Sep 2023 to Present (7 months)</p>
-            <P>As the Lead Analyst at BYJU'S, I spearheaded various data-driven initiatives to optimize processes and
-                drive strategic
-                decision-making. Key accomplishments include:</P>
-
-            <LI>Led the development of automated solutions for Google Classroom tasks, significantly reducing manual
-                effort and
-                improving efficiency.</LI>
-            <LI>Established robust data pipelines for Google Chat Spaces and mail merge tools, enabling seamless data
-                extraction and
-                analysis.</LI>
-            <LI>Designed and implemented actionable business health dashboards, providing stakeholders with valuable
-                insights for
-                informed decision-making.</LI>
-            <LI>
-                Fostered a collaborative team environment, facilitating knowledge sharing and innovation to continuously
-                improve
-                analytical capabilities.</LI>
+            <h3>Lead Analyst - Byju's - Think & Learn Pvt Ltd</h3>
+            <p>Full-time | <span id="employment-duration"></span></p>
+            <p>As the Lead Analyst at BYJU'S, I spearheaded various data-driven initiatives to optimize processes and drive strategic decision-making. Key accomplishments include:</p>
+            <ul>
+                <li>Led the development of automated solutions for Google Classroom tasks, significantly reducing manual effort and improving efficiency.</li>
+                <li>Established robust data pipelines for Google Chat Spaces and mail merge tools, enabling seamless data extraction and analysis.</li>
+                <li>Designed and implemented actionable business health dashboards, providing stakeholders with valuable insights for informed decision-making.</li>
+                <li>Fostered a collaborative team environment, facilitating knowledge sharing and innovation to continuously improve analytical capabilities.</li>
+                <li>ETL Solutions using Pyspark,AWS S3, Snowflake and EMR<li> 
+            </ul>
             <!-- Add more employment history here -->
         </article>
+    </section>
+
+    <script>
+        // Function to calculate and display employment duration
+        function calculateEmploymentDuration(startDateStr) {
+            const startDate = new Date(startDateStr);
+            const currentDate = new Date();
+
+            // Calculate the number of months and years difference
+            const monthsDiff = (currentDate.getFullYear() - startDate.getFullYear()) * 12 
+                             + (currentDate.getMonth() - startDate.getMonth());
+            const years = Math.floor(monthsDiff / 12);
+            const months = monthsDiff % 12;
+
+            // Format the start date to "MMM YYYY" (e.g., "Sep 2023")
+            const startDateFormatted = startDate.toLocaleString('default', { month: 'short', year: 'numeric' });
+
+            // Create the duration string in the format "1 year and 1 month"
+            let durationStr = "";
+            if (years > 0) {
+                durationStr += `${years} year${years > 1 ? "s" : ""}`;
+            }
+            if (months > 0) {
+                if (years > 0) durationStr += " and ";
+                durationStr += `${months} month${months > 1 ? "s" : ""}`;
+            }
+
+            return `${startDateFormatted} to Present (${durationStr})`;
+        }
+
+        // Set the duration in the HTML once the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("employment-duration").textContent = calculateEmploymentDuration("2023-09-01");
+        });
+    </script>
 
         <article class="Employment">
             <h3>Associate Analyst - Byjus - Think & Learn Pvt Ltd</h3>
